@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyectoapp.MasterPage"
+             xmlns:local="clr-namespace:proyectoapp"
+             Padding="0,40,0,0"
+             Icon="logo.png"
+             Title="Ambiente app">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type local:MasterPageItem}">
+                        <local:MasterPageItem Titulo="Ver datos" Icono="v_datos.png" TipoPagina="{x:Type local:VerDatosPage}"></local:MasterPageItem>
+                        <local:MasterPageItem Titulo="Descargar datos" Icono="d_datos.png" TipoPagina="{x:Type local:DescargarDatosPage}"></local:MasterPageItem>
+                        <local:MasterPageItem Titulo="Comentarios" Icono="comentarios.png" TipoPagina="{x:Type local:ComentariosPage}"></local:MasterPageItem>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Icono}"></Image>
+                                <Label Grid.Column="1" Text="{Binding Titulo}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
