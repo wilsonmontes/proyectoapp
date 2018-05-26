@@ -12,6 +12,21 @@
             <Label Text="Página ver datos"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            <Grid ColumnSpacing="0"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Fecha inicio"></Label>
+                <DatePicker x:Name="dtFechaIni"></DatePicker>
+                <Label Text="Fecha fin"></Label>
+                <DatePicker x:Name="dtFechaFin"></DatePicker>
+            </Grid>
+        </StackLayout>s
     </ContentPage.Content>
 </ContentPage>
